@@ -23,4 +23,4 @@
 ---
 
 💌 **Créé avec tout mon amour** – [bonnefetemama.netlify.app](https://bonnefetemama.netlify.app)  
-📅 *Fête des Mères 2024* | 🌸 *Juste pour toi*
+📅 *Fête des Mères 2025* | 🌸 *Juste pour toi*
