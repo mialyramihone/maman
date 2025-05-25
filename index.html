@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonne Fête Maman ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        .heart-beat {
+            animation: pulse 1s infinite;
+        }
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+        .bg-pastel {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+        }
+        .flower {
+            position: absolute;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        .photo-frame {
+            border: 8px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+        .message-bubble {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .message-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50px;
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: white transparent;
+        }
+    </style>
+</head>
+<body class="bg-pastel min-h-screen overflow-x-hidden relative font-sans">
+    <!-- Fleurs flottantes -->
+    <div class="flower text-pink-300 text-4xl" style="top: 10%; left: 5%;">
+        <i class="fas fa-spin fa-spinner"></i>
+    </div>
+    <div class="flower text-purple-300 text-3xl" style="top: 20%; right: 10%;">
+        <i class="fas fa-spin fa-star"></i>
+    </div>
+    <div class="flower text-red-300 text-5xl" style="bottom: 15%; left: 15%;">
+        <i class="fas fa-heart"></i>
+    </div>
+    <div class="flower text-yellow-300 text-2xl" style="top: 30%; left: 20%;">
+        <i class="fas fa-spin fa-circle-notch"></i>
+    </div>
+    <div class="flower text-pink-400 text-4xl" style="bottom: 25%; right: 5%;">
+        <i class="fas fa-heart"></i>
+    </div>
+
+    <div class="container mx-auto px-4 py-12 relative z-10">
+        <!-- Étape 1 - Carte principale -->
+        <div id="step1" class="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden transition-all duration-500 transform hover:scale-105">
+            <div class="p-8 text-center">
+                <div class="floating inline-block mb-6">
+                    <i class="fas fa-gift text-6xl text-pink-500"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-pink-600 mb-4">Bonne Fête Maman !</h1>
+                <p class="text-gray-600 mb-6">Clique sur la carte pour découvrir ton message spécial ❤️</p>
+                <button onclick="nextStep(1)" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg">
+                    <i class="fas fa-heart mr-2"></i> Ouvrir la carte
+                </button>
+            </div>
+        </div>
+
+        <!-- Étape 2 - Message 1 -->
+        <div id="step2" class="hidden max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden mt-8 fade-in">
+            <div class="p-8 text-center">
+                <div class="heart-beat inline-block mb-6">
+                    <i class="fas fa-heart text-6xl text-red-500"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-purple-600 mb-4">Chère Maman,</h2>
+                <p class="text-gray-700 text-lg mb-6">Aujourd'hui est une journée spéciale pour célébrer la personne la plus importante de ma vie.</p>
+                <p class="text-gray-700 text-lg mb-6">Tu es mon rocher, ma meilleure amie et ma plus grande inspiration.</p>
+                
+                <div class="flex justify-center my-6">
+                    <img src="img/20240330_103844.jpg" 
+                         alt="" 
+                         class="photo-frame rounded-lg w-64 h-64 object-cover">
+                </div>
+                
+                <button onclick="nextStep(2)" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg">
+                    <i class="fas fa-arrow-right mr-2"></i> Continuer
+                </button>
+            </div>
+        </div>
+
+        <!-- Étape 3 - Message 2 -->
+        <div id="step3" class="hidden max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden mt-8 fade-in">
+            <div class="p-8 text-center">
+                <div class="floating inline-block mb-6">
+                    <i class="fas fa-star text-6xl text-yellow-400"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-pink-600 mb-4">Tu es extraordinaire</h2>
+                <p class="text-gray-700 text-lg mb-6">Merci pour tous les sacrifices que tu as faits, pour ton amour inconditionnel et pour ta patience infinie.</p>
+                <p class="text-gray-700 text-lg mb-6">Tu rends chaque jour plus beau simplement en étant toi-même.</p>
+                
+                
+                
+                <button onclick="nextStep(3)" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg">
+                    <i class="fas fa-arrow-right mr-2"></i> Encore plus
+                </button>
+            </div>
+        </div>
+
+        <!-- Étape 4 - Message 3 -->
+        <div id="step4" class="hidden max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden mt-8 fade-in">
+            <div class="p-8 text-center">
+                <div class="pulse inline-block mb-6">
+                    <i class="fas fa-crown text-6xl text-purple-500"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-purple-600 mb-4">La reine de mon cœur</h2>
+                <p class="text-gray-700 text-lg mb-6">Aucun mot ne peut décrire à quel point tu es importante pour moi.</p>
+                <p class="text-gray-700 text-lg mb-6">Je suis tellement chanceux(se) de t'avoir comme maman.</p>
+                
+                
+                <div class="message-bubble text-left">
+                    <p class="text-gray-700 italic">"Une mère comprend toujours ce que son enfant ne dit pas."</p>
+                    <p class="text-gray-500 text-sm mt-2">- Proverbe juif</p>
+                </div>
+                
+                <button onclick="nextStep(4)" class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg">
+                    <i class="fas fa-arrow-right mr-2"></i> Dernier message
+                </button>
+            </div>
+        </div>
+
+        <!-- Étape 5 - Message 4 -->
+        <div id="step5" class="hidden max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden mt-8 fade-in">
+            <div class="p-8 text-center">
+                <div class="heart-beat inline-block mb-6">
+                    <i class="fas fa-heart text-6xl text-red-500"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-red-500 mb-4">Nos souvenirs</h2>
+                <p class="text-gray-700 text-lg mb-6">Chaque moment passé avec toi est un trésor que je chéris.</p>
+                
+                
+                <div class="message-bubble text-left">
+                    <p class="text-gray-700">Merci pour tous ces moments magiques :</p>
+                    <ul class="list-disc list-inside text-gray-600 mt-2">
+                        <li>Nos fous rires partagés</li>
+                        <li>Tes conseils précieux</li>
+                        <li>Tes câlins réconfortants</li>
+                        <li>Tes petits plats faits avec amour</li>
+                    </ul>
+                </div>
+                
+                <button onclick="nextStep(5)" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg mt-6">
+                    <i class="fas fa-arrow-right mr-2"></i> Suite
+                </button>
+            </div>
+        </div>
+
+        <!-- Étape 6 - Message final -->
+        <div id="step6" class="hidden max-w-2xl mx-auto bg-pink-100 rounded-3xl shadow-xl overflow-hidden mt-8 fade-in">
+            <div class="p-8 text-center">
+                <div class="heart-beat inline-block mb-6">
+                    <i class="fas fa-heart text-6xl text-red-500"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-red-500 mb-4">Je t'aime plus que tout</h2>
+                <p class="text-gray-700 text-lg mb-6">Passe une merveilleuse journée remplie d'amour et de bonheur.</p>
+                <p class="text-gray-700 text-lg mb-6">Tu mérites tout le bonheur du monde et bien plus encore.</p>
+                
+                <div class="flex justify-center my-6">
+                    <img src="img/20250131_104947.jpg" 
+                         alt="Mère et enfant qui dansent" 
+                         class="photo-frame rounded-lg w-64 h-64 object-cover pulse">
+                </div>
+                
+                <div class="flex justify-center space-x-4 mb-6">
+                    <i class="fas fa-heart text-red-500 text-2xl"></i>
+                    <i class="fas fa-heart text-pink-500 text-2xl"></i>
+                    <i class="fas fa-heart text-purple-500 text-2xl"></i>
+                    <i class="fas fa-heart text-yellow-500 text-2xl"></i>
+                    <i class="fas fa-heart text-red-500 text-2xl"></i>
+                </div>
+                
+                <div class="flex justify-center space-x-4">
+                    <button onclick="confettiEffect()" class="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg">
+                        <i class="fas fa-heart mr-2"></i> Surprise !
+                    </button>
+                    <button onclick="restartCard()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-110 shadow-lg">
+                        <i class="fas fa-redo mr-2"></i> Recommencer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confettis -->
+        <div id="confetti" class="fixed inset-0 pointer-events-none hidden"></div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        
+        function nextStep(step) {
+            document.getElementById(`step${step}`).classList.add('hidden');
+            currentStep = step + 1;
+            document.getElementById(`step${currentStep}`).classList.remove('hidden');
+            
+            
+            if (currentStep < 6) {
+                addRandomFlowers(2);
+            }
+            
+            
+            if (currentStep === 4) {
+                setTimeout(() => {
+                    document.querySelector('.shake').classList.add('shake');
+                    setTimeout(() => {
+                        document.querySelector('.shake').classList.remove('shake');
+                    }, 1000);
+                }, 500);
+            }
+        }
+        
+        function addRandomFlowers(count) {
+            for (let i = 0; i < count; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'flower text-' + ['pink', 'purple', 'red', 'yellow'][Math.floor(Math.random() * 4)] + 
+                                  '-' + [300, 400][Math.floor(Math.random() * 2)] + 
+                                  ' text-' + ['2xl', '3xl', '4xl', '5xl'][Math.floor(Math.random() * 4)];
+                
+                const iconClass = ['fa-heart', 'fa-star', 'fa-spinner', 'fa-circle-notch'][Math.floor(Math.random() * 4)];
+                const spinClass = ['fa-heart', 'fa-star'].includes(iconClass) ? '' : 'fa-spin';
+                
+                flower.innerHTML = `<i class="fas ${iconClass} ${spinClass}"></i>`;
+                
+                flower.style.top = Math.random() * 80 + 10 + '%';
+                flower.style.left = Math.random() * 80 + 10 + '%';
+                flower.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                document.body.appendChild(flower);
+            }
+        }
+        
+        function confettiEffect() {
+            const confetti = document.getElementById('confetti');
+            confetti.classList.remove('hidden');
+            
+            
+            for (let i = 0; i < 150; i++) {
+                setTimeout(() => {
+                    const confettiPiece = document.createElement('div');
+                    confettiPiece.className = 'absolute w-4 h-4 rounded-full';
+                    
+                    const colors = ['bg-pink-500', 'bg-purple-500', 'bg-red-500', 'bg-yellow-400', 'bg-blue-400'];
+                    confettiPiece.classList.add(colors[Math.floor(Math.random() * colors.length)]);
+                    
+                    confettiPiece.style.left = Math.random() * 100 + '%';
+                    confettiPiece.style.top = '-20px';
+                    confettiPiece.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    
+                    
+                    if (Math.random() > 0.7) {
+                        confettiPiece.classList.remove('rounded-full');
+                        confettiPiece.classList.add('rounded-none');
+                        confettiPiece.style.width = '8px';
+                        confettiPiece.style.height = '8px';
+                    }
+                    
+                    confetti.appendChild(confettiPiece);
+                    
+                    // Animation
+                    const animation = confettiPiece.animate([
+                        { top: '-20px', opacity: 1 },
+                        { top: '100%', opacity: 0 }
+                    ], {
+                        duration: 2000 + Math.random() * 3000,
+                        easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)'
+                    });
+                    
+                    animation.onfinish = () => confettiPiece.remove();
+                }, i * 30);
+            }
+            
+            
+            const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-heartbeat-with-delay-1173.mp3');
+            audio.play();
+            
+            
+            setTimeout(() => {
+                const messages = [
+                    "Je t'aime maman plus que tout au monde ! ❤️",
+                    "Tu es la meilleure maman du monde ! 🌟",
+                    "Merci pour tout ce que tu fais pour moi chaque jour. 😊",
+                    "Passe une journée aussi merveilleuse que toi ! 💐"
+                ];
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                alert(randomMessage + "\n\nPasse une merveilleuse fête des mères !");
+            }, 2000);
+        }
+        
+        function restartCard() {
+            
+            for (let i = 2; i <= 6; i++) {
+                document.getElementById(`step${i}`).classList.add('hidden');
+            }
+            
+            
+            document.getElementById('step1').classList.remove('hidden');
+            currentStep = 1;
+            
+            
+            const flowers = document.querySelectorAll('.flower');
+            for (let i = 5; i < flowers.length; i++) {
+                flowers[i].remove();
+            }
+            
+            
+            addRandomFlowers(5);
+            
+            
+            document.getElementById('confetti').classList.add('hidden');
+        }
+        
+        // Ajouter des fleurs initiales
+        window.onload = function() {
+            addRandomFlowers(10);
+            
+            // Animation pour la première image après chargement
+            setTimeout(() => {
+                const firstImage = document.querySelector('.photo-frame');
+                if (firstImage) {
+                    firstImage.classList.add('pulse');
+                    setTimeout(() => {
+                        firstImage.classList.remove('pulse');
+                    }, 2000);
+                }
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
