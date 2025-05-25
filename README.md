@@ -1,29 +1,26 @@
-# 💐 Bonne fête à ma maman
+# 💝 Carte Exclusive pour Maman
 
-Un petit site web réalisé avec ❤️ pour souhaiter une **belle fête à ma maman**.
+**Un cadeau numérique unique fait rien que pour toi, Maman**  
 
-## 🌸 Présentation
+[![Ouvrir la carte](https://img.shields.io/badge/Cadeau_Spécial-bonnefetemama.netlify.app-ff69b4?style=for-the-badge&logo=heart)](https://bonnefetemama.netlify.app)
 
-Ce projet est une simple page en **HTML** et **Tailwind CSS** dédiée à ma mère, pour lui dire merci et lui témoigner mon amour avec douceur et élégance.
+## 🌟 Message Perso
+*"Maman,*  
+*Ce site est un petit reflet de tout l'amour que j'ai pour toi.*  
+*Merci d'être ma lumière, mon soutien... et la meilleure des mamans."*  
 
-## ✨ Fonctionnalités
+## ✨ Ce que tu découvriras
+- 📜 **Messages secrets** écrits juste pour toi
+- 🖼️ **Nos plus beaux souvenirs** en photos
+- 🎉 **Effets magiques** (surprise à la fin !)
+- 💌 **Un espace rien qu'à nous deux**
 
-- Design responsive et esthétique avec Tailwind CSS
-- Message personnalisé
-- Image ou photo symbolique
-- Mise en page claire et minimaliste
+## 🎁 Comment l'utiliser ?
+1. Clique sur le bouton "Cadeau Spécial" ci-dessus
+2. Avance comme dans une histoire
+3. Sois surprise à chaque étape !
 
-## 🛠️ Technologies utilisées
+---
 
-- [HTML5](https://developer.mozilla.org/fr/docs/Web/HTML)
-- [Tailwind CSS](https://tailwindcss.com/)
-
-## 📷 Aperçu
-
-<img src="screenshot.png" alt="Aperçu du site Bonne fête maman" width="500"/>
-
-## 🚀 Lancer le projet
-
-1. Clone ce repo :
-   ```bash
-   git clone https://github.com/ton-utilisateur/bonne-fete-maman.git
+💌 **Créé avec tout mon amour** – [bonnefetemama.netlify.app](https://bonnefetemama.netlify.app)  
+📅 *Fête des Mères 2024* | 🌸 *Juste pour toi*
